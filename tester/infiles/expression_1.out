@@ -1,0 +1,20 @@
+[MUL]
+   [ADD]
+      [SUB]
+         [ADD]
+            [SUB]
+               [MUL]
+                  [VAL]: '1'
+                  [VAL]: '40'
+               [DIV]
+                  [VAL]: '20'
+                  [VAL]: '10'
+            [VAL]: '17'
+         [MUL]
+            [VAL]: '12'
+            [SUB]
+               [VAL]: '10'
+               [VAL]: '9'
+      [VAL]: '10'
+   [VAL]: '8'
+424

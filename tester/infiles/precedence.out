@@ -1,0 +1,14 @@
+[MUL]
+   [MUL]
+      [DIV]
+         [MUL]
+            [DIV]
+               [MUL]
+                  [VAL]: '2'
+                  [VAL]: '10'
+               [VAL]: '4'
+            [VAL]: '2'
+         [VAL]: '2'
+      [VAL]: '2'
+   [VAL]: '3'
+30
