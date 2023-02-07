@@ -1,11 +1,11 @@
 #include <stdlib.h>
-#include "libstringf.h"
+#include <stdio.h>
 #include "calc_plus.h"
 
 static int __usage_error(char *filename)
 {
-	fputstr(2, "%rs\n", "Usage Error");
-	fputstr(2, "Usage: %s <expression>\n", filename);
+	fprintf(stderr, "%s\n", "Usage Error");
+	fprintf(stderr, "Usage: %s <expression>\n", filename);
 	return (EXIT_FAILURE);
 }
 

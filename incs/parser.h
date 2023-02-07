@@ -6,7 +6,7 @@
 /*   By: pducos <pducos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:52:01 by pducos            #+#    #+#             */
-/*   Updated: 2022/11/13 16:54:00 by pducos           ###   ########.fr       */
+/*   Updated: 2022/11/28 08:10:33 by pducos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ struct s_ast
 };
 
 t_ast	*parser(t_token *list);
-bool	syntatic_check(t_token *list);
 
 t_ast	*ast_create(t_token *tokenlist);
 void	ast_display(t_ast *ast);

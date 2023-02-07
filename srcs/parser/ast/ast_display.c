@@ -6,11 +6,11 @@
 /*   By: pducos <pducos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:32:39 by pducos            #+#    #+#             */
-/*   Updated: 2022/11/13 16:48:54 by pducos           ###   ########.fr       */
+/*   Updated: 2022/11/28 08:15:09 by pducos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libstringf.h"
+#include <stdio.h>
 #include "parser.h"
 
 static void	inner(t_ast *ast, size_t depth);
@@ -29,7 +29,7 @@ static const char	*g_ast_names[] = {
 
 static void	put_binop(t_ast *ast, size_t depth)
 {
-	putstr("\n");
+	fprintf(stdout, "\n");
 	inner(ast->binop.left, depth + 1);
 	inner(ast->binop.right, depth + 1);
 }
@@ -40,11 +40,11 @@ static void	inner(t_ast *ast, size_t depth)
 
 	i = 0;
 	while (i++ < depth)
-		putstr("%3s", "");
+		fprintf(stdout, "%3s", "");
 	if (ast->kind == EXP_VAL)
-		putstr("[%s]: '%d'\n", "VAL", ast->value);
+		fprintf(stdout, "[%s]: '%d'\n", "VAL", ast->value);
 	else
-		putstr("[%s]", g_ast_names[ast->kind]);
+		fprintf(stdout, "[%s]", g_ast_names[ast->kind]);
 	if (ast->kind == EXP_ADD
 		|| ast->kind == EXP_SUB
 		|| ast->kind == EXP_MUL

@@ -9,8 +9,7 @@ CFLAGS 		:= -Wall -Wextra -Werror
 SRCS := main.c \
 	calc_plus.c                \
 	\
-	lexer/token_list_build.c   \
-	lexer/token_list_display.c \
+	lexer/toklist_build.c      \
 	lexer/list/lst_newtok.c    \
 	lexer/list/lst_addtok.c    \
 	lexer/list/lst_destroy.c   \
@@ -22,11 +21,13 @@ SRCS := main.c \
 	lexer/is_%/is_space.c      \
 	\
 	parser/parser.c            \
-	parser/syntatic_check.c    \
 	parser/ast/ast_create.c    \
 	parser/ast/ast_display.c   \
 	parser/ast/ast_new_val.c   \
 	parser/ast/ast_new_op.c    \
 	parser/ast/ast_solve.c     \
+	\
+	emitter/emitter.c    \
+	emitter/emit_start.c \
 
 

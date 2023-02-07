@@ -6,7 +6,7 @@
 /*   By: pducos <pducos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:10:35 by pducos            #+#    #+#             */
-/*   Updated: 2022/11/13 14:36:41 by pducos           ###   ########.fr       */
+/*   Updated: 2022/11/28 08:09:11 by pducos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ bool	is_op(char c);
 bool	is_oparen(char c);
 bool	is_space(char c);
 
-bool	token_list_build(t_token **list, const char *in);
-void	token_list_display(t_token *list);
+bool	toklist_build(t_token **list, const char *in);
 
 t_token	*lst_newtok(void);
 void	lst_addtok(t_token **toklist, t_token *tok, t_token_kind kind);

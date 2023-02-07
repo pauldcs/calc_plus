@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "lexer.h"
-#include "libstringf.h"
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -93,7 +92,7 @@ static bool tokenize_op(t_token **list, char **ptr)
 	return (false);
 }
 
-bool token_list_build(t_token **list, const char *in)
+bool toklist_build(t_token **list, const char *in)
 {
 	char	*ptr;
 	t_token *tok;

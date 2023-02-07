@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fputstr.c                                          :+:      :+:    :+:   */
+/*   emit_start.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pducos <pducos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 21:07:49 by pducos            #+#    #+#             */
-/*   Updated: 2022/11/13 12:55:25 by pducos           ###   ########.fr       */
+/*   Created: 2022/12/01 16:51:14 by pducos            #+#    #+#             */
+/*   Updated: 2022/12/01 16:53:36 by pducos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libstringf.h"
-#include <stdarg.h>
-#include <stddef.h>
+#include <stdio.h>
 
-size_t	fputstr(int fd, const char *format, ...)
+void emit_start(void)
 {
-	static char	buf[IOBUF_MAX];
-	va_list		ap;
-	t_iobuf		iob;
-
-	lf_mem_set(&iob, '\0', sizeof(t_iobuf));
-	iob.data = buf;
-	iob.cap = sizeof(buf);
-	va_start(ap, format);
-	iob_format_str(&iob, format, &ap);
-	va_end(ap);
-	return (lf_write_all(
-			fd,
-			iob.data,
-			iob.len));
+	printf ("\t.align 4\n");
+	printf ("\t.global _main\n");
+	printf ("\t.text\n");
+	printf ("_main:\n");
 }
